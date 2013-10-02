@@ -1,0 +1,72 @@
+/* List styling */
+//Unstyled
+.list-unstyled {
+	.list-unstyled();
+    padding-left: 20px;
+		li {
+		margin:0 0 5px 0;
+		padding:0;
+		border:none;
+		background:none;
+		list-style-type:none;
+
+		&:before {
+			display:none;
+		}
+	}
+
+}
+//Styled
+.list-styled	 {
+	.list-unstyled();
+	& li {
+		position:relative;
+
+		 &:before {
+			display: inline-block;
+			margin-right: 5px;
+			width: 14px;
+			height: 14px;
+			content: attr(data-icon);
+			font-family: 'FontAwesome';
+			line-height: 14px;
+			speak: none;
+        }
+	}
+}
+/* Check List */
+.check-list  li:before {
+	content: "\f00c";	
+}
+/* Check2 List */
+.check2-list  li:before {
+	content: "\f078";
+}		
+/* Arrow List */
+.arrow-list   li:before {
+	content: "\f054";
+}	
+/* Arrow2 List */
+.arrow2-list   li:before {
+	content: "\f061";
+}
+/* Star List */
+.star-list   li:before {
+	content: "\f005";
+}
+/* Plus List */
+.plus-list   li:before {
+	content: "\f067";
+}
+/* Minus List */
+.minus-list   li:before {
+	content: "\f068";
+}
+.the-icons {
+.list-unstyled()
+}
+.the-icons li {
+    float: left;
+    line-height: 25px;
+    width: 25%;
+}

@@ -18,6 +18,8 @@ If there are no child pages, the widget or shortcode will not show.
 
 Via the options you can set whether you want to display title, content limited by number of characters, set size of featured thumbnail. 
 
+Please feel free to contribute on https://github.com/mladjom/wp-child-pages
+
 == Installation ==
 
 Standard WordPress installation; either:

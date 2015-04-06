@@ -10,21 +10,23 @@ function child_pages($atts) {
     ob_start();
     extract(shortcode_atts(array(
         'title' => '',
-        'orderby' => '',
-        'order' => 'DESC',
-        'thumb_size' => '',
+        'page_thumbnail' => '',
+        'thumbnail_size' => '',
+        'thumbnail_align' => '',
         'page_title' => '',
         'page_excerpt' => '',
         'excerpt_lenght' => '',
-                    ), $atts
+        'orderby' => '',
+        'order' => 'DESC',
+        ), $atts
     ));
 
     global $post;
 
     if ($title)
-        echo '<h2>' . $title . '</h2>';
+        echo '<h1>' . $title . '</h1>';
     ?>
-    <?php
+    <?php 
     global $post;
     //Here we geting current page id
     $args = array(
@@ -37,21 +39,22 @@ function child_pages($atts) {
         <?php
         $pages = get_pages($args);
         foreach ($pages as $page) {
+           // var_dump($page);
             $content = $page->post_content;
            // var_dump($page_title);
              // var_dump($page_excerpt);
           ?>
             <li>
                 <?php if ($page_title == 'true') { ?>
-                    <h3>
+                    <h2>
                         <a href="<?php echo get_page_link($page->ID); ?>"><?php echo $page->post_title; ?></a>
-                    </h3>
+                    </h2>
                 <?php } ?>	 						
-                <p>
-                    <?php echo get_the_post_thumbnail($page->ID, array($thumb_size, $thumb_size), array('class' => 'alignleft')); ?>
+                    <?php if ($page_thumbnail == 'true') 
+                        echo get_the_post_thumbnail($page->ID, $thumbnail_size, array('class' => $thumbnail_align)); 
+                    ?>
                     <?php if ($page_excerpt == 'true') { ?>
-                        <?php echo string_limit_characters($content, $excerpt_lenght); ?>
-                    </p>
+                        <?php echo $page->post_excerpt; ?>
                 <?php } ?>					
             </li>
         <?php } ?>

@@ -16,11 +16,47 @@ $childpages_shortcodes['childpages'] = array(
             'label' => __('Title', 'childpages'),
             'desc' => __('(optional)', 'childpages')
         ),
-        'thumb_size' => array(
+        'page_thumbnail' => array(
+            'type' => 'checkbox',
+            'label' => __('Show Thumbnail', 'childpages'),
+            'desc' => __('', 'childpages'),
+            'default' => false
+        ),
+        'thumbnail_size' => array(
+            'std' => '',
+            'type' => 'select',
+            'label' => __('Thumbnail Size', 'childpages'),
+            'desc' => __('Chose thumbnail', 'childpages'),
+                 'options' => 
+                CP()->get_thumbnail_sizes()
+            ),
+        'thumbnail_align' => array(
+            'type' => 'select',
+            'label' => __('Thumbnail Align', 'childpages'),
+            'desc' => __('', 'childpages'),
+            'options' => array(
+                'alignleft' => 'Align Left',
+                'alignright' => 'Align Right',
+                'alignnone' => 'Align None',
+            )
+        ),
+        'page_title' => array(
+            'type' => 'checkbox',
+            'label' => __('Show page title', 'childpages'),
+            'desc' => __('', 'childpages'),
+            'default' => true
+        ),
+        'page_excerpt' => array(
+            'type' => 'checkbox',
+            'label' => __('Show excerpt', 'childpages'),
+            'desc' => __('', 'childpages'),
+            'default' => true
+        ),
+        'excerpt_lenght' => array(
             'std' => '',
             'type' => 'text',
-            'label' => __('Image Size', 'childpages'),
-            'desc' => __('(in pixels)', 'childpages'),
+            'label' => __('Excerpt length', 'childpages'),
+            'desc' => __('(characters)', 'childpages')
         ),
         'order' => array(
             'type' => 'select',
@@ -43,24 +79,6 @@ $childpages_shortcodes['childpages'] = array(
                 'DESC' => 'DESC',
                 'ASC' => 'ASC',
             )
-        ),
-        'page_title' => array(
-            'type' => 'checkbox',
-            'label' => __('Show page title', 'childpages'),
-            'desc' => __('', 'childpages'),
-            'default' => true
-        ),
-        'page_excerpt' => array(
-            'type' => 'checkbox',
-            'label' => __('Show excerpt ', 'childpages'),
-            'desc' => __('', 'childpages'),
-            'default' => true
-        ),
-        'excerpt_lenght' => array(
-            'std' => '',
-            'type' => 'text',
-            'label' => __('Excerpt length', 'childpages'),
-            'desc' => __('(characters):', 'childpages')
         ),
     )
 );

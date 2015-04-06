@@ -1,9 +1,8 @@
 <?php
-
 /**
  * Plugin Name: Child Pages
- * Plugin URI: http://milentijevic.com/wordpress/plugins/
- * Description: This Plugin displays child pages of the page it is placed on.
+ * Plugin URI: http://milentijevic.com/wordpress-plugins/
+ * Description: This Plugin displays child pages of the parent page it is placed on.
  * Version: 1.0
  * Author: Mladjo
  * Author URI: http://milentijevic.com
@@ -82,6 +81,7 @@ if (!class_exists('ChildPages')) :
             $this->init_hooks();
             $this->define_constants();
             $this->includes();
+            $this->get_thumbnail_sizes();
         }
 
         /**
@@ -148,6 +148,7 @@ if (!class_exists('ChildPages')) :
         public function init() {
             // Set up localisation
             $this->load_plugin_textdomain();
+            add_post_type_support('page', 'excerpt');
         }
 
         /**
@@ -165,6 +166,20 @@ if (!class_exists('ChildPages')) :
 //            wp_enqueue_style('childpages', plugins_url('assets/css/childpages.css', __FILE__), array(), CP_VERSION);
 //            wp_enqueue_script('childpages', plugins_url('/assets/js/childpages.js', __FILE__), array('jquery'), CP_VERSION, true);
 //        }
+        /**
+         * Get the available image sizes.
+         */
+        public function get_thumbnail_sizes() {
+
+            global $_wp_additional_image_sizes;
+
+            foreach (get_intermediate_image_sizes() as $s) {
+
+                $sizes[$s] = $s;
+            }
+
+            return $sizes;
+        }
 
         /**
          * Get the plugin url.

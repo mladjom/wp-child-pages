@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Child Pages
- * Plugin URI: http://milentijevic.com/wordpress-plugins/
+ * Plugin URI: http://milentijevic.com/wordpress-plugins/wp-child-pages/
  * Description: This Plugin displays child pages of the parent page it is placed on.
  * Version: 1.0
  * Author: Mladjo

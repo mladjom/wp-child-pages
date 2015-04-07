@@ -1,8 +1,9 @@
 === WP Child Pages ===
 Contributors: Mladjo
-Tags: child, page, widget, navigation, nav, children, shortcode
+Tags: child, page, widget, navigation, nav, children, shortcode, plugin, wordpress
 Requires at least: 3.8
 Tested up to: 4.2
+Stable tag: 1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -29,6 +30,11 @@ Standard WordPress installation; either:
 Or
 
 - Upload this plugin's zip file into Plugins -> Add New -> Upload in your dashboard; then activate it.
+
+== Screenshots ==
+
+1. Widget editing interface.
+2. Shortcodes generator.
 
 == Changelog ==
 

@@ -7,9 +7,9 @@ if (!class_exists('ChildPagesWidget')) {
 
     class ChildPagesWidget extends WP_Widget {
 
+        protected $widget_slug = 'childpages';
 
-	protected $plugin_slug = 'childpages'; 
-		/*--------------------------------------------------*/
+        /* -------------------------------------------------- */
         /* Constructor
           /*-------------------------------------------------- */
 
@@ -19,15 +19,26 @@ if (!class_exists('ChildPagesWidget')) {
          */
         public function __construct() {
             // widget actual processes
+            parent::__construct(
+                    $this->get_widget_slug(), __('Child Pages', $this->get_widget_slug()), array(
+                'classname' => $this->get_widget_slug() . '-class',
+                'description' => __('Child Pages.', $this->get_widget_slug())
+                    ), array(
+                'width' => 250,
+                'height' => 350,
+            ));
 
-            /* Widget settings. */
-            $widget_ops = array('classname' => $this->plugin_slug, 'description' => __('Child Pages', $this->plugin_slug));
+        }
 
-            /* Widget control settings. */
-            $control_ops = array('width' => 250, 'height' => 350, 'id_base' => $this->plugin_slug);
-
-            /* Create the widget. */
-            $this->WP_Widget($this->plugin_slug, __('Child Pages', $this->plugin_slug), $widget_ops, $control_ops);
+        /**
+         * Return the widget slug.
+         *
+         * @since 1.0.0
+         *
+         * @return Plugin slug variable.
+         */
+        public function get_widget_slug() {
+            return $this->widget_slug;
         }
 
         /* -------------------------------------------------- */

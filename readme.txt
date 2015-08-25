@@ -2,8 +2,8 @@
 Contributors: Mladjo
 Tags: child, page, widget, navigation, nav, children, shortcode, plugin, wordpress
 Requires at least: 3.8
-Tested up to: 4.2
-Stable tag: 1.0
+Tested up to: 4.3
+Stable tag: 1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -37,6 +37,9 @@ Or
 2. Shortcodes generator.
 
 == Changelog ==
+
+= 1.1 =
+* Widget Updated
 
 = 1.0 =
 * Initial Release

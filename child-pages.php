@@ -3,11 +3,11 @@
  * Plugin Name: Child Pages
  * Plugin URI: http://milentijevic.com/wordpress-plugins/wp-child-pages/
  * Description: This Plugin displays child pages of the parent page it is placed on.
- * Version: 1.0
+ * Version: 1.1
  * Author: Mladjo
  * Author URI: http://milentijevic.com
- * Requires at least: 4.0
- * Tested up to: 4.2
+ * Requires at least: 3.8
+ * Tested up to: 4.3
  *
  * Text Domain: childpages
  * Domain Path: /languages/

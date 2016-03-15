@@ -4,6 +4,7 @@ $title = apply_filters('widget_title', $instance['title']);
 $parents = $parents;
 $orderby = $instance['orderby'];
 $order = $instance['order'];
+$tag = $instance['tag'];
 $thumb_size = $instance['thumb_size'];
 $show_title = $instance['show_title'];
 $show_excerpt = $instance['show_excerpt'];
@@ -29,17 +30,23 @@ $args = array(
         ?>
         <li>
             <?php if ($show_title == 'on') { ?>
-            <h4 class="media-heading">
+            <<?php echo $tag ?> class="media-heading">
                 <a href="<?php echo get_page_link($page->ID); ?>"><?php echo $page->post_title; ?></a>
-            </h4>
-                <?php } ?>	 						
-            <p>
-             <?php echo get_the_post_thumbnail($page->ID, array($thumb_size, $thumb_size), array('class' => 'alignleft')); ?>
-            <?php if ($show_excerpt == 'on') { ?>
-               <?php echo string_limit_characters($content, $excerpt_lenght); ?>
-            </p>
-                <?php } ?>					
+            </<?php echo $tag ?>>
+                <?php } ?>
+
+             <?php
+              $image = get_the_post_thumbnail($page->ID, array($thumb_size, $thumb_size), array('class' => 'alignleft'));
+              if($image || $show_excerpt == 'on') {
+             ?>
+                <p>
+                  <?php echo $image; ?>
+                  <?php if ($show_excerpt == 'on') { ?>
+                     <?php echo string_limit_characters($content, $excerpt_lenght); ?>
+                  <?php } ?>
+                </p>
+              <?php } ?>
+
         </li>
 <?php } ?>
 </ul>
-

@@ -57,6 +57,7 @@ if (!class_exists('ChildPagesWidget')) {
             /* Make sure all keys are added here, even with empty string values. */
             $defaults = array(
                 'title' => '',
+                'tag' => 'h4',
                 'orderby' => 'menu_order',
                 'order' => 'DESC',
                 'thumb_size' => 50,
@@ -122,6 +123,7 @@ if (!class_exists('ChildPagesWidget')) {
             $instance['orderby'] = esc_attr($new_instance['orderby']);
             $instance['order'] = esc_attr($new_instance['order']);
             $instance['thumb_size'] = esc_attr($new_instance['thumb_size']);
+            $instance['tag'] = esc_attr($new_instance['tag']);
 
             $instance['show_excerpt'] = strip_tags($new_instance['show_excerpt']);
             $instance['show_title'] = strip_tags($new_instance['show_title']);

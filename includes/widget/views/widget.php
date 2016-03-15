@@ -33,13 +33,20 @@ $args = array(
             <<?php echo $tag ?> class="media-heading">
                 <a href="<?php echo get_page_link($page->ID); ?>"><?php echo $page->post_title; ?></a>
             </<?php echo $tag ?>>
-                <?php } ?>	 						
-            <p>
-             <?php echo get_the_post_thumbnail($page->ID, array($thumb_size, $thumb_size), array('class' => 'alignleft')); ?>
-            <?php if ($show_excerpt == 'on') { ?>
-               <?php echo string_limit_characters($content, $excerpt_lenght); ?>
-            </p>
                 <?php } ?>
+
+             <?php
+              $image = get_the_post_thumbnail($page->ID, array($thumb_size, $thumb_size), array('class' => 'alignleft'));
+              if($image || $show_excerpt == 'on') {
+             ?>
+                <p>
+                  <?php echo $image; ?>
+                  <?php if ($show_excerpt == 'on') { ?>
+                     <?php echo string_limit_characters($content, $excerpt_lenght); ?>
+                  <?php } ?>
+                </p>
+              <?php } ?>
+
         </li>
 <?php } ?>
 </ul>

@@ -6,7 +6,12 @@
 		<p>
 			<label for="<?php echo $this->get_field_id( 'thumb_size' ); ?>"><?php _e( 'Image Size (in pixels):', $this->widget_slug ); ?></label>
 			<input type="text" name="<?php echo $this->get_field_name( 'thumb_size' ); ?>"  value="<?php echo $instance['thumb_size']; ?>" class="widefat" id="<?php echo $this->get_field_id( 'thumb_size' ); ?>" />
-		</p>		
+		</p>
+		<!-- Widget Title Tag: Text Input -->
+		<p>
+			<label for="<?php echo $this->get_field_id( 'tag' ); ?>"><?php _e( 'Tag:', $this->widget_slug ); ?></label>
+			<input type="text" name="<?php echo $this->get_field_name( 'tag' ); ?>"  value="<?php echo $instance['tag']; ?>" class="widefat" id="<?php echo $this->get_field_id( 'tag' ); ?>" />
+		</p>
 		<!-- Widget Order By: Select Input -->
 		<p>
 			<label for="<?php echo $this->get_field_id( 'orderby' ); ?>"><?php _e( 'Order By:', $this->widget_slug ); ?></label>
@@ -15,7 +20,7 @@
 				<option value="<?php echo $k; ?>"<?php selected( $instance['orderby'], $k ); ?>><?php echo $v; ?></option>
 			<?php } ?>
 			</select>
-		</p>		
+		</p>
 		<!-- Widget Order: Select Input -->
 		<p>
 			<label for="<?php echo $this->get_field_id( 'order' ); ?>"><?php _e( 'Order Direction:', $this->widget_slug ); ?></label>
@@ -38,9 +43,9 @@
 				<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id("show_excerpt"); ?>" name="<?php echo $this->get_field_name("show_excerpt"); ?>"<?php checked( (bool) $instance["show_excerpt"], true ); ?> />
 				<?php _e( 'Show excerpt', $this->widget_slug ); ?>
 			</label>
-		</p>	
+		</p>
 		<!-- Excerpt Limit: Text Input -->
 		<p>
 			<label for="<?php echo $this->get_field_id( 'excerpt_lenght' ); ?>"><?php _e( 'Excerpt length (characters):', $this->widget_slug ); ?></label>
-			<input type="text" name="<?php echo $this->get_field_name( 'excerpt_lenght' ); ?>"  value="<?php echo $instance['excerpt_lenght']; ?>" class="widefat" id="<?php echo $this->get_field_id( 'excerpt_lenght' ); ?>" />	
-		</p>	
+			<input type="text" name="<?php echo $this->get_field_name( 'excerpt_lenght' ); ?>"  value="<?php echo $instance['excerpt_lenght']; ?>" class="widefat" id="<?php echo $this->get_field_id( 'excerpt_lenght' ); ?>" />
+		</p>
